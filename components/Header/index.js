@@ -14,4 +14,8 @@ function Header() {
         date = document.createElement('span');
         times = document.createElement('h1');
         temp = document.createElement('span');
+
+        header.appendChild(date);
+        header.appendChild(times);
+        header.appendChild(temp);
 }
