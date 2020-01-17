@@ -15,3 +15,9 @@ function Tabs(obj) {
 
   return tab; 
 }
+
+axios
+  .get('https://lambda-times-backend.herokuapp.com/topics')
+  .then(response => {
+    console.log(response); 
+  })
