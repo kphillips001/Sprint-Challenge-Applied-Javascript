@@ -17,8 +17,7 @@
 // </div>
 //
 // Create a card for each of the articles and add the card to the DOM.
-
-const cardsContainer = document.querySelector('cards-container');
+const cardContainer = document.querySelector('.cards-container')
 
 axios.get(`https://lambda-times-backend.herokuapp.com/articles`)
   .then(response =>{
@@ -52,8 +51,6 @@ axios.get(`https://lambda-times-backend.herokuapp.com/articles`)
     headline.textContent = data.headline;
     authorsName.textContent = data.authorName;
     
-    const cardContainer = document.querySelector('.cards-container')
-    
     cardContainer.appendChild(card);
     card.appendChild(headline);
     card.appendChild(author);
@@ -61,4 +58,5 @@ axios.get(`https://lambda-times-backend.herokuapp.com/articles`)
     imgContainer.appendChild(imgsrc);
     author.appendChild(authorsName);
     
+    return card;
     };
