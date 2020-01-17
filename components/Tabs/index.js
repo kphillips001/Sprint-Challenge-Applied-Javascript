@@ -16,8 +16,20 @@ function Tabs(obj) {
   return tab; 
 }
 
+const topics = document.querySelector('.topics'); 
+
 axios
   .get('https://lambda-times-backend.herokuapp.com/topics')
   .then(response => {
-    console.log(response); 
+    console.log(response.data.topics); 
+      response.data.topics.forEach(item => {
+        const newTab = document.createElement('div');
+        newTab.classList.add('tab');
+        newTab.textContent = item;
+        topics.appendChild(newTab);
+      })
+      
+      })
+      .catch(error => {
+        console.log(error); 
   })
